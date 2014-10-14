@@ -1,0 +1,48 @@
+[
+    {
+        
+        "id": "0", 
+        "imageUrl": "images/products/aveeno_18-w62.jpg", 
+        "name": "Aveeno BABY WASH & SHAMPOO", 
+        "shortName": "Aveeno cleanses",
+        "price": "7.99",
+        "shipCost": "1.2",
+        "type": "cosmatics",
+        "total": "110",
+        "suggestPrice": "170"
+    }, 
+    {
+       
+        "id": "1", 
+        "imageUrl": "images/products/aveeno_8-w62.jpg", 
+        "name": "Aveeno BABY SOOTHING RELIEF CREAMY WASH", 
+        "shortName": "Aveeno Creamy Wash.",
+        "price": "6.29",
+        "shipCost": "1.2",
+        "type": "cosmatics",
+        "total": "110",
+        "suggestPrice": "170"
+    }, 
+    {
+       
+        "id": "2", 
+        "imageUrl": "images/products/aveeno_1-w62.jpg", 
+        "name": "Aveeno BABY CALMING COMFORT® BATH", 
+        "shortName": "Aveeno calming bath",
+        "price": "5.29",        
+        "shipCost": "10",
+        "type": "cosmatics",
+        "total": "110",
+        "suggestPrice": "170"
+    },{
+        "id":"3",
+        "imageUrl": "images/products/bear_gummy_calcuim_1.JPG",
+        "name":"L'il Critters Calcium Gummy Bears with Vitamin D",
+        "shortName": "Gummy bears calcium",
+        "price":"9.99",
+        "shipCost": "6.6",
+        "type":"food",
+        "total": "110",
+        "suggestPrice": "170"
+    }
+]

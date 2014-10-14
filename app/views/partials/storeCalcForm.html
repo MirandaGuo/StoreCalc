@@ -1,0 +1,191 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+	Product Calculator
+</div>
+<div class="panel-body">
+	  <form role="form" class="form-horizontal">
+			  <div role="row">
+		            <div class="col-sm-6">
+				       <div class="form-group">
+					      	<label for="nameInput" class="col-sm-4 control-label">Name</label>
+					      	<div class="col-sm-6">				      	  
+						         <input  type="name" class="form-control" id="nameInput" ng-model="product.name">
+					      	</div>
+					    </div>
+					    <div class="form-group">
+					           <label for="typeSelect" class="col-sm-4 control-label">Type</label>
+					            <div  class="col-sm-6">
+					            	<select ng-model="tax" class="options" id="typeSelect">
+					            		<option ng-repeat = "type in types" value="{{type.tax}}">
+					            		  {{type.name}}
+					            		</option>
+					                </select>
+					            </div>
+					    </div>
+					    <div class="form-group">
+					      	<label for="priceInput" class="col-sm-4 control-label">Price</label>
+					      	<div class="col-sm-6">			
+					      	    <div class="input-group">      	    	
+						      	    <span class="input-group-addon">$</span>
+						         	<input  type="price" class="form-control" id="priceInput" ng-model="product.price">
+						        </div>
+					      	</div>
+					    </div>
+					   
+					    <div class="form-group">
+					      	<label for="taxInput" class="col-sm-4 control-label">Tax</label>
+					      	<div class="col-sm-6">			
+					      	    <input  type="tax" class="form-control col-sm-3" id="taxInput" value ="{{tax}}" disabled>
+					      	</div>
+					    </div>
+					       <div class="form-group">
+					      	<label for="costInput" class="col-sm-4 control-label">Cost</label>
+					      	<div class="col-sm-6">   	    	
+					      	        <input  type="total" class="form-control" id="totalInput" ng-model="product.cost" disabled>
+					      	</div>
+					    </div>
+					    <div class="form-group">
+					      	<label for="shippingCostInput" class="col-sm-4 control-label">Shipping Cost</label>
+					      	<div class="col-sm-6">			
+					      	    <div class="input-group">      	    	
+						      	    <span class="input-group-addon">$</span>
+					      	        <input  type="shippingCost" class="form-control" id="shippingCostInput" ng-model="product.shippingCost" >
+					      	        <span class="input-group-btn">
+								        <button class="btn btn-default" type="button">Calc</button>
+								    </span>
+					      	    </div>
+					      	</div>
+					    </div>
+					    <div class="form-group ">
+					      	<label for="totalInput" class="col-sm-4 control-label">Total Cost</label>
+					      	<div class="col-sm-6">			
+					      	    <div class="input-group">      	    	
+						      	    <span class="input-group-addon">$</span>
+					                <input  type="total" class="form-control" id="totalInput" ng-model="product.total" disabled>
+					            </div>
+					      	</div>
+					    </div>
+				        <div class="form-group">
+				      	    <label for="currencyInput" class="col-sm-4 control-label">Currency</label>
+				      	    <div class="col-sm-6">			
+					      	    <div class="input-group">      	    	
+						      	    <span class="input-group-addon">1:</span>
+						         	<input  type="currency" class="form-control" id="currencyInput" ng-model="currency">
+						        </div>
+				      	    </div>
+					    </div>
+					    <div class="form-group">
+						    <label for="rmbTotalInput" class="col-sm-4 control-label">Total(RMB)</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal" class="form-control" id="rmbTotalInput" ng-model="product.rmbTotal" disabled>
+							        </div>
+						      	</div>
+						</div>
+			</div>
+		    <div class="col-sm-6">
+					<div class="form-group">
+						    <label for="rmbTotal0Input" class="col-sm-4 control-label">10% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal0" class="form-control" id="rmbTotal0Input" ng-value="calProfit(product.rmbTotal, 1.1)" disabled>
+							        </div>
+						      	</div>
+						</div>
+						<div class="form-group">
+						    <label for="rmbTotal1Input" class="col-sm-4 control-label">15% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal1" class="form-control" id="rmbTotal1Input" ng-value="calProfit(product.rmbTotal, 1.15)" disabled>
+							        </div>
+						      	</div>
+						</div>
+						<div class="form-group">
+						    <label for="rmbTotal2Input" class="col-sm-4 control-label">20% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal2" class="form-control" id="rmbTotal2Input" ng-value="calProfit(product.rmbTotal, 1.2)" disabled>
+							        </div>
+						      	</div>
+						</div>
+						<div class="form-group">
+						    <label for="rmbTotal3Input" class="col-sm-4 control-label">30% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal3" class="form-control" id="rmbTotal3Input" ng-value="calProfit(product.rmbTotal, 1.3)" disabled>
+							        </div>
+						      	</div>
+						</div> 
+						<div class="form-group">
+						    <label for="rmbTotal4Input" class="col-sm-4 control-label">40% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal4" class="form-control" id="rmbTotal4Input" ng-value="calProfit(product.rmbTotal, 1.4)" disabled>
+							        </div>
+						      	</div>
+						</div> 
+						<div class="form-group">
+						    <label for="rmbTotal5Input" class="col-sm-4 control-label">50% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal5" class="form-control" id="rmbTotal5Input" ng-value="calProfit(product.rmbTotal, 1.5)" disabled>
+							        </div>
+						      	</div>
+						</div> 	
+						<div class="form-group">
+						    <label for="rmbTotal6Input" class="col-sm-4 control-label">60% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal6" class="form-control" id="rmbTotal6Input" ng-value="calProfit(product.rmbTotal, 1.6)" disabled>
+							        </div>
+						      	</div>
+						</div> 	
+						<div class="form-group">
+						    <label for="rmbTotal7Input" class="col-sm-4 control-label">70% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal7" class="form-control" id="rmbTotal7Input" ng-value="calProfit(product.rmbTotal, 1.7)" disabled>
+							        </div>
+						      	</div>
+						</div> 	
+						<div class="form-group">
+						    <label for="rmbTotal8Input" class="col-sm-4 control-label">80% Profit</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="rmbTotal8" class="form-control" id="rmbTotal8Input" ng-value="calProfit(product.rmbTotal, 1.8)" disabled>
+							        </div>
+						      	</div>
+						</div> 	
+						<div class="form-group">
+						    <label for="suggPriceInput" class="col-sm-4 control-label">Suggest Price</label>
+						    <div class="col-sm-6">			
+						      	    <div class="input-group">      	    	
+							      	    <span class="input-group-addon">￥</span>
+							         	<input  type="suggestPrice" class="form-control" id="suggPriceInput" ng-model="product.suggestPrice">
+							        </div>
+						      	</div>
+						</div> 						
+						</div>
+			 </div>    			
+		      <div class="form-group">
+		          <label class="control-label col-sm-3" ></label>
+		          <div class="col-sm-6">
+			      	  <button type="submit" class="btn btn-primary" ng-click ="calculateCost()">Calculate</button>
+				      <button type="button" class="btn btn-info" ng-click ="resetAll()">Reset</button>
+				      <button type="button" class="btn btn-success" ng-click ="resetAll()">Add To List</button>
+				  </div>
+		     </div>
+
+	   </form>
+</div>
+</div>

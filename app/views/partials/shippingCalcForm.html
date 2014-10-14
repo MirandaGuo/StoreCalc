@@ -1,0 +1,71 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+	Shipping Fee
+</div>
+<div class="panel-body">
+	
+	  <form role="form" class="form-horizontal">
+	        <div class="form-group">
+			      	<label for="nameInput" class="col-sm-3 control-label">Name</label>
+			      	<div class="col-sm-4">				      	  
+				         <input  type="name" class="form-control" id="nameInput" ng-model="name">
+			      	</div>
+			</div>
+		    <div class="form-group">
+		           <label for="typeSelect" class="col-sm-3 control-label">Type</label>
+		            <div  class="col-sm-4">
+		            	<select ng-model="typeoption" class="options" id="typeSelect">
+		            		<option ng-repeat = "type in types" value="{{type.tax}}">
+		            		  {{type.name}}
+		            		</option>
+		                </select>
+		            </div>
+		    </div>
+		     <div class="form-group">
+			      	<label for="priceInput" class="col-sm-3 control-label">Price</label>
+			      	<div class="col-sm-4">				      	  
+				         <input  type="price" class="form-control" id="priceInput" ng-model="price">
+			      	</div>
+			</div>
+		     <div class="form-group">
+			      	<label for="weightInput" class="col-sm-3 control-label">Weight</label>
+			      	<div class="col-sm-4">				      	  
+				         <input  type="weight" class="form-control" id="weightInput" ng-model="weight">
+			      	</div>
+			</div>
+			 <div class="form-group">
+			      	<label for="taxInput" class="col-sm-3 control-label">Tax</label>
+			      	<div class="col-sm-4">				      	  
+				         <input  type="tax" class="form-control" id="taxInput" ng-model="tax">
+
+			      	</div>
+			</div>
+			
+			<div class="form-group">
+			      	<label for="priceWeightSelect" class="col-sm-3 control-label">Price/lbs</label>		
+			      		<div class="col-sm-4">      	    
+			             	<select class="options" id="priceWeightSelect" ng-model="priceWeight">
+			            		<option ng-repeat="type in types" value="{{type.priceWeight}}">
+			            		     ${{type.priceWeight}} - {{type.name }}
+			            		</option>
+			               </select>
+			             </div>	      	  
+				        
+			</div>
+			 <div class="form-group">
+			      	<label for="costInput" class="col-sm-3 control-label">Shipping Cost</label>
+			      	<div class="col-sm-4">      	    
+			              <input  type="cost" class="form-control" id="costInput" ng-model="cost" disabled="">
+			        </div>
+			</div>
+			 <div class="form-group">
+		          <label class="control-label col-sm-3" ></label>
+		          <div class="col-sm-6">
+			      	  <button type="submit" class="btn btn-primary" ng-click ="calculateCost()">Calculate</button>
+				      <button type="button" class="btn btn-info" ng-click ="resetAll()">Reset</button>
+				      <button type="button" class="btn btn-success" ng-click ="saveAll()">Save</button>
+				  </div>
+		     </div>
+	  </form>
+</div>
+</div>
